@@ -398,149 +398,143 @@ footer {
     gap: 15px;
     margin-top: 20px;
     animation: moveUp 1000ms;
+
+    .the_meal_box {
+        color: black;
+        text-decoration: none;
+        position: relative;
+        padding: 3% 5% 3% 3%;
+        border-radius: 15px;
+        background-color: white;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        animation-name: fadeIn;
+
+        .alltext {
+            display: flex;
+            justify-content: space-between;
+
+            .meal_text_1,
+            .meal_text_2 {
+                flex-direction: column;
+            }
+
+            h3 {
+                margin-top: 0;
+                margin-bottom: 0;
+                font-weight: bolder;
+            }
+
+            p {
+                margin: 0;
+            }
+
+            .price {
+                align-self: flex-end;
+
+            }
+        }
+
+        #check {
+            visibility: hidden;
+            border: $color-mint;
+            background-color: $color-mint;
+            border-radius: 0 15px 15px 0;
+            color: white;
+            position: absolute;
+            left: 99%;
+            top: 0px;
+            padding: 5%;
+            font-size: x-large;
+        }
+
+        &:hover {
+            #check {
+                visibility: visible;
+                animation: slideIn 1000ms ease-in;
+                transform: rotate (-1turn);
+                transition: transform 1s ease-in;
+                padding: 5%;
+                left: 86%;
+            }
+
+            .alltext {
+                width: 80%;
+            }
+
+            .meal_text_2 {
+                width: 90%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+                h3,
+                p {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+
+                }
+            }
+        }
+    }
+
 }
 
-.the_meal_1,
-.the_meal_2,
-.the_meal_3 {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    color: black;
-    text-decoration: none;
-    position: relative;
-    padding: 3% 0 3% 3%;
-    border-radius: 15px;
-    background-color: white;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    // overflow: hidden;
-    animation-name: fadeIn;
-
-    // width: 80%;
-
-    .alltext {
-        display: flex;
-        justify-content: space-between;
-        width: 95%;
+/* translateY */
+@keyframes slideIn {
+    0% {
+        transform: translateX(0);
+        transform-origin: left ;
+    }
+    
+    50%{
+        transform: scaleX(0);
+        padding-top: 5%;
+        padding-bottom: 5%;
+        padding-left: 2%;
+        padding-right: 2%;
+        left: 86%;
     }
 
-    .meal_text {
-        flex-direction: column;
-    }
-
-    h3 {
-        margin-top: 0;
-        margin-bottom: 0;
-        font-weight: bolder;
-    }
-
-    p {
-        margin: 0;
-    }
-
-    .price {
-        align-self: flex-end;
-    }
-
-    #check {
-        // visibility: hidden;
-        border: $color-mint;
-        background-color: $color-mint;
-        border-radius: 0 15px 15px 0;
-        color: white;
-        position: absolute;
-        left: 85%;
-        top: -1px;
+    100% {
+        transform: scaleX(0);
         padding: 5%;
-        font-size: x-large;
+        left: 86%;
+    }
+}
+
+/* ANIMATION FADE IN MENU */
+.the_meal_1 {
+    animation-duration: 2s;
+}
+
+.the_meal_2 {
+    animation-duration: 4s;
+}
+
+.the_meal_3 {
+    animation-duration: 6s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
     }
 
-    // &:hover {
-    //     #check {
-    //         visibility: visible;
-    //         animation-name: slideIn;
-    //         animation-duration: 2s;
-    //         transition: margin-right;
-    //         padding: 5%;
-    //         transform-origin: left;
-    //     }
+    100% {
+        opacity: 1;
+    }
+}
 
-    //     .alltext {
-    //         text-overflow: ellipsis;
-    //     }
-    // }
-
-    /* translateY */
-    @keyframes slideIn {
-        from {
-            margin-left: 2000px;
-        }
-
-        to {
-            margin-left: 30px;
-        }
+/*ANIMATION MOVE UP MENU */
+@keyframes moveUp {
+    0% {
+        margin-top: 30px;
     }
 
-    /* ANIMATION FADE IN MENU */
-    .the_meal_1 {
-        animation-duration: 2s;
+    100% {
+        margin-top: 20px;
     }
-
-    .the_meal_2 {
-        animation-duration: 4s;
-    }
-
-    .the_meal_3 {
-        animation-duration: 6s;
-    }
-
-    @keyframes fadeIn {
-        0% {
-            opacity: 0;
-        }
-
-        100% {
-            opacity: 1;
-        }
-    }
-
-    /*ANIMATION MOVE UP MENU */
-    @keyframes moveUp {
-        0% {
-            margin-top: 30px;
-        }
-
-        100% {
-            margin-top: 20px;
-        }
-    }
-
-
-    // // .the_meal_1 a:active {
-    // //     i {
-    // //        transform-origin: 50% 0%;
-    // //         transform: scaleX(1);
-    // //     }
-    // // }
-
-    // @keyframes slidein {
-    //     0% {
-    //         transform-origin: left;
-    //     }
-
-    //     100%{ 
-    //         transform: scaleX(0deg);
-    //     }
-
-
-    // }
-
-    // .the_meal_1 a:active{
-    //     .check{
-    //         display: unset;
-    //     }
-    // }
 }
 
 
@@ -773,4 +767,5 @@ footer {
         padding: 10px;
         width: 40%;
     }
+
 }
