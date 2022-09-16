@@ -6,65 +6,6 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.load {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  inset: 0;
-  background-color: white;
-  opacity: 0.9;
-  -webkit-animation: disappear 3s;
-          animation: disappear 3s;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-}
-
-.loader {
-  position: absolute;
-  display: block;
-  margin: auto;
-  margin-top: 200px;
-  border: 10px solid;
-  width: 120px;
-  height: 120px;
-  border-top-color: #FF79DA;
-  border-bottom-color: #99E2D0;
-  border-left-color: #9356DC;
-  border-right-color: #9356DC;
-  border-radius: 50%;
-  -webkit-animation: rotate 3s linear;
-          animation: rotate 3s linear;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-}
-
-@-webkit-keyframes rotate {
-  0% {
-    transform: rotate(360deg) scale(1);
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(360deg) scale(1);
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@-webkit-keyframes disappear {
-  100% {
-    visibility: collapse;
-  }
-}
-@keyframes disappear {
-  100% {
-    visibility: collapse;
-  }
-}
 .location,
 .infos {
   padding-left: 20px;
@@ -127,12 +68,11 @@ header button,
   flex-direction: column;
   align-items: center;
   margin-bottom: 10%;
-  padding-left: 10px;
   padding-right: 10px;
   gap: 25px;
 }
-.steps button {
-  width: 90%;
+.steps .step {
+  width: 80%;
   border: none;
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
@@ -190,6 +130,7 @@ header button,
   height: 250px;
   border-radius: 15px;
   box-shadow: 0px 5px 20px #999;
+  position: relative;
 }
 
 .card_image {
@@ -217,22 +158,16 @@ header button,
 
 .card_body {
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-}
-
-.text {
-  margin-bottom: none;
-  padding-left: 10%;
-  width: 100%;
+  flex-direction: column;
+  padding-left: 13px;
   color: black;
 }
-.text h3 {
-  margin-top: 10%;
-  margin-bottom: 0;
+.card_body h3 {
+  margin-top: 12px;
+  margin-bottom: 2px;
 }
-.text p {
-  margin-top: 3px;
+.card_body p {
+  margin: 0;
 }
 
 .heart {
@@ -240,6 +175,9 @@ header button,
   margin: 5%;
   font-size: 25px;
   color: black;
+  position: absolute;
+  top: 70%;
+  left: 80%;
 }
 .heart .empty_heart {
   color: black;
@@ -252,10 +190,10 @@ header button,
   display: block;
   margin-top: -120%;
 }
-.heart:active .empty_heart {
+.heart:hover .empty_heart {
   visibility: hidden;
 }
-.heart:active .full_heart {
+.heart:hover .full_heart {
   visibility: visible;
   -webkit-animation: fillup 2s;
           animation: fillup 2s;
@@ -445,7 +383,6 @@ footer img {
 .the_meal_1 #check,
 .the_meal_2 #check,
 .the_meal_3 #check {
-  visibility: hidden;
   border: #99E2D0;
   background-color: #99E2D0;
   border-radius: 0 15px 15px 0;
@@ -453,24 +390,8 @@ footer img {
   position: absolute;
   left: 85%;
   top: -1px;
-  font-size: x-large;
-}
-.the_meal_1:hover #check,
-.the_meal_2:hover #check,
-.the_meal_3:hover #check {
-  visibility: visible;
-  -webkit-animation-name: slideIn;
-          animation-name: slideIn;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  transition: margin-right;
   padding: 5%;
-  transform-origin: left;
-}
-.the_meal_1:hover .alltext,
-.the_meal_2:hover .alltext,
-.the_meal_3:hover .alltext {
-  text-overflow: ellipsis;
+  font-size: x-large;
 }
 @-webkit-keyframes slideIn {
   from {

@@ -11,50 +11,50 @@ $color-pink: #FF79DA;
 $color-purple: #9356DC;
 $color-grey: #f0f0f08f;
 
-.load {
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    inset: 0;
-    background-color: white;
-    opacity: 0.9;
-    animation: disappear 3s;
-    animation-fill-mode: both;
-}
+// .load {
+//     position: fixed;
+//     display: flex;
+//     justify-content: center;
+//     inset: 0;
+//     background-color: white;
+//     opacity: 0.9;
+//     animation: disappear 3s;
+//     animation-fill-mode: both;
+// }
 
-.loader {
-    position: absolute;
-    display: block;
-    margin: auto;
-    margin-top: 200px;
-    border: 10px solid;
-    width: 120px;
-    height: 120px;
-    border-top-color: $color-pink;
-    border-bottom-color: $color-mint;
-    border-left-color: $color-purple;
-    border-right-color: $color-purple;
-    border-radius: 50%;
-    animation: rotate 3s linear;
-    animation-fill-mode: both;
-}
+// .loader {
+//     position: absolute;
+//     display: block;
+//     margin: auto;
+//     margin-top: 200px;
+//     border: 10px solid;
+//     width: 120px;
+//     height: 120px;
+//     border-top-color: $color-pink;
+//     border-bottom-color: $color-mint;
+//     border-left-color: $color-purple;
+//     border-right-color: $color-purple;
+//     border-radius: 50%;
+//     animation: rotate 3s linear;
+//     animation-fill-mode: both;
+// }
 
-@keyframes rotate {
-    0% {
-        transform: rotate(360deg) scale(1);
+// @keyframes rotate {
+//     0% {
+//         transform: rotate(360deg) scale(1);
 
-    }
+//     }
 
-    100% {
-        opacity: 0;
-    }
-}
+//     100% {
+//         opacity: 0;
+//     }
+// }
 
-@keyframes disappear {
-    100% {
-        visibility: collapse;
-    }
-}
+// @keyframes disappear {
+//     100% {
+//         visibility: collapse;
+//     }
+// }
 
 .location,
 .infos {
@@ -121,12 +121,11 @@ header button,
     flex-direction: column;
     align-items: center;
     margin-bottom: 10%;
-    padding-left: 10px;
     padding-right: 10px;
     gap: 25px;
 
-    button {
-        width: 90%;
+    .step {
+        width: 80%;
         border: none;
         border-radius: 25px;
         box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
@@ -190,6 +189,7 @@ header button,
     height: 250px;
     border-radius: 15px;
     box-shadow: 0px 5px 20px #999;
+    position: relative;
 }
 
 .card_image {
@@ -217,23 +217,18 @@ header button,
 
 .card_body {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-}
-
-.text {
-    margin-bottom: none;
-    padding-left: 10%;
-    width: 100%;
+    flex-direction: column;
+    padding-left: 13px;
     color: black;
 
     h3 {
-        margin-top: 10%;
-        margin-bottom: 0;
+        margin-top: 12px;
+        margin-bottom: 2px;
+
     }
 
     p {
-        margin-top: 3px;
+        margin: 0;
     }
 }
 
@@ -242,6 +237,9 @@ header button,
     margin: 5%;
     font-size: 25px;
     color: black;
+    position: absolute;
+    top: 70%;
+    left: 80%;
 
     .empty_heart {
         color: black;
@@ -257,7 +255,7 @@ header button,
         margin-top: -120%;
     }
 
-    &:active {
+    &:hover {
         .empty_heart {
             visibility: hidden;
         }
@@ -419,6 +417,8 @@ footer {
     // overflow: hidden;
     animation-name: fadeIn;
 
+    // width: 80%;
+
     .alltext {
         display: flex;
         justify-content: space-between;
@@ -444,7 +444,7 @@ footer {
     }
 
     #check {
-        visibility: hidden;
+        // visibility: hidden;
         border: $color-mint;
         background-color: $color-mint;
         border-radius: 0 15px 15px 0;
@@ -452,28 +452,31 @@ footer {
         position: absolute;
         left: 85%;
         top: -1px;
+        padding: 5%;
         font-size: x-large;
     }
 
-    &:hover {
-        #check {
-            visibility: visible;
-            animation-name: slideIn;
-            animation-duration: 2s;
-            transition: margin-right;
-            padding: 5%;
-            transform-origin: left;
-        }
+    // &:hover {
+    //     #check {
+    //         visibility: visible;
+    //         animation-name: slideIn;
+    //         animation-duration: 2s;
+    //         transition: margin-right;
+    //         padding: 5%;
+    //         transform-origin: left;
+    //     }
 
-        .alltext{
-            text-overflow: ellipsis;
-        }
-    }
-/* translateY */
+    //     .alltext {
+    //         text-overflow: ellipsis;
+    //     }
+    // }
+
+    /* translateY */
     @keyframes slideIn {
         from {
             margin-left: 2000px;
         }
+
         to {
             margin-left: 30px;
         }
@@ -496,6 +499,7 @@ footer {
         0% {
             opacity: 0;
         }
+
         100% {
             opacity: 1;
         }
@@ -506,6 +510,7 @@ footer {
         0% {
             margin-top: 30px;
         }
+
         100% {
             margin-top: 20px;
         }
@@ -569,7 +574,8 @@ footer {
         &:hover {
             transform: scale(1.10);
             cursor: pointer;
-            /*éclaircir le bouton*/opacity: -15;
+            /*éclaircir le bouton*/
+            opacity: -15;
         }
     }
 
