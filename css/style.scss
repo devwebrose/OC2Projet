@@ -374,152 +374,179 @@ footer {
             font-size: xx-large;
         }
 
-        i {
-            font-size: xx-large;
+        .heart_menu {
+            .empty_heart {
+                font-size: xx-large;
+                justify-content: end;
+            }
+
+            .full_heart {
+                position: absolute;
+                margin-left: -8%;
+                font-size: xx-large;
+                background: linear-gradient(to top, $color-pink, $color-purple);
+                ;
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                visibility: hidden;
+            }
+
+            &:hover {
+                .empty_heart {
+                    visibility: hidden;
+                }
+
+                .full_heart {
+                    visibility: visible;
+                    animation: fillup 2s;
+                }
+            }
         }
+
     }
 
-    .underline {
-        width: 60px;
-        height: 5px;
-        background-color: $color-mint;
-    }
+}
 
-    .appetizers,
-    .dishes,
-    .desserts {
-        margin-bottom: 50px;
+.underline {
+    width: 60px;
+    height: 5px;
+    background-color: $color-mint;
+}
 
-        .meals {
+.appetizers,
+.dishes,
+.desserts {
+    margin-bottom: 50px;
+
+    .meals {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+        animation: moveup 1000ms;
+
+        .the_meal_box_1 {
+            animation: fade 2000ms;
+        }
+
+        .the_meal_box_2 {
+            animation: fade 4000ms;
+        }
+
+        .the_meal_box_3 {
+            animation: fade 6000ms;
+        }
+
+        .the_meal_box_1,
+        .the_meal_box_2,
+        .the_meal_box_3 {
             display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 20px;
-            animation: moveup 1000ms;
+            justify-content: space-between;
+            position: relative;
+            background-color: white;
+            color: black;
+            text-decoration: none;
+            border-radius: 15px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
-            .the_meal_box_1 {
-                animation: fade 2000ms;
+            .check {
+                visibility: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 20%;
+                color: white;
+                background-color: $color-mint;
+                border-radius: 0 15px 15px 0;
+                font-size: x-large;
+
+                i {
+                    transform: rotate(140deg);
+                }
             }
 
-            .the_meal_box_2 {
-                animation: fade 4000ms;
-            }
-
-            .the_meal_box_3 {
-                animation: fade 6000ms;
-            }
-
-            .the_meal_box_1,
-            .the_meal_box_2,
-            .the_meal_box_3 {
+            .alltext {
+                width: 300%;
                 display: flex;
                 justify-content: space-between;
-                position: relative;
-                background-color: white;
-                color: black;
-                text-decoration: none;
-                border-radius: 15px;
-                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                padding: 13px 0 13px 13px;
+                margin-right: 10px;
 
+                .meal_text {
+                    flex-direction: column;
+                    width: 88%;
+                }
+
+                h3 {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    font-weight: bolder;
+                }
+
+                p {
+                    margin: 0;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .price {
+                    align-self: end;
+                }
+            }
+
+            &:hover {
                 .check {
-                    visibility: hidden;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: 20%;
-                    color: white;
-                    background-color: $color-mint;
-                    border-radius: 0 15px 15px 0;
-                    font-size: x-large;
+                    visibility: visible;
+                    animation: 500ms ease-in;
+                    overflow: hidden;
 
                     i {
-                        transform: rotate(140deg);
+                        transform: rotate(360deg);
+                        transition: 500ms ease-in-out;
                     }
                 }
 
                 .alltext {
-                    width: 300%;
-                    display: flex;
-                    justify-content: space-between;
-                    padding: 13px 0 13px 13px;
-                    margin-right: 10px;
-
-                    .meal_text {
-                        flex-direction: column;
-                        width: 88%;
-                    }
-
-                    h3 {
-                        margin-top: 0;
-                        margin-bottom: 0;
-                        font-weight: bolder;
-                    }
-
-                    p {
-                        margin: 0;
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                    }
-
-                    .price {
-                        align-self: end;
-                    }
+                    width: 75%;
+                    transition: all 500ms;
                 }
 
-                &:hover {
-                    .check {
-                        visibility: visible;
-                        animation: 500ms ease-in;
-                        overflow: hidden;
+                h3,
+                p {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
 
-                        i {
-                            transform: rotate(360deg);
-                            transition: 500ms ease-in-out;
-                        }
-                    }
-
-                    .alltext {
-                        width: 75%;
-                        transition: all 500ms;
-                    }
-
-                    h3,
-                    p {
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-
-                    }
                 }
             }
-
         }
+
     }
-
-    /*ANIMATION MOVE UP MENU */
-    @keyframes moveup {
-        0% {
-            margin-top: 30px;
-        }
-
-        100% {
-            margin-top: 20px;
-        }
-    }
-
-    /* ANIMATION FADE MENU */
-    @keyframes fade {
-        from {
-            opacity: 0;
-        }
-
-        to {
-            opacity: 1;
-        }
-    }
-
 }
+
+/*ANIMATION MOVE UP MENU */
+@keyframes moveup {
+    0% {
+        margin-top: 30px;
+    }
+
+    100% {
+        margin-top: 20px;
+    }
+}
+
+/* ANIMATION FADE MENU */
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 
 @media all and (min-width: 992px) {
     .infos {
@@ -652,7 +679,7 @@ footer {
             margin-top: -120%;
         }
 
-        &:active {
+        &:hover {
             .empty_heart {
                 visibility: hidden;
             }

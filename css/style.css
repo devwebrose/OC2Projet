@@ -290,8 +290,6 @@ footer img {
   background-color: #F0F0F0;
   padding: 5%;
   position: relative;
-  /*ANIMATION MOVE UP MENU */
-  /* ANIMATION FADE MENU */
 }
 .menu h2 {
   margin-left: 0;
@@ -307,22 +305,42 @@ footer img {
   font-family: "Shrikhand", cursive;
   font-size: xx-large;
 }
-.menu .menu_title i {
+.menu .menu_title .heart_menu .empty_heart {
   font-size: xx-large;
+  justify-content: end;
 }
-.menu .underline {
+.menu .menu_title .heart_menu .full_heart {
+  position: absolute;
+  margin-left: -8%;
+  font-size: xx-large;
+  background: linear-gradient(to top, #FF79DA, #9356DC);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  visibility: hidden;
+}
+.menu .menu_title .heart_menu:hover .empty_heart {
+  visibility: hidden;
+}
+.menu .menu_title .heart_menu:hover .full_heart {
+  visibility: visible;
+  -webkit-animation: fillup 2s;
+          animation: fillup 2s;
+}
+
+.underline {
   width: 60px;
   height: 5px;
   background-color: #99E2D0;
 }
-.menu .appetizers,
-.menu .dishes,
-.menu .desserts {
+
+.appetizers,
+.dishes,
+.desserts {
   margin-bottom: 50px;
 }
-.menu .appetizers .meals,
-.menu .dishes .meals,
-.menu .desserts .meals {
+.appetizers .meals,
+.dishes .meals,
+.desserts .meals {
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -330,33 +348,33 @@ footer img {
   -webkit-animation: moveup 1000ms;
           animation: moveup 1000ms;
 }
-.menu .appetizers .meals .the_meal_box_1,
-.menu .dishes .meals .the_meal_box_1,
-.menu .desserts .meals .the_meal_box_1 {
+.appetizers .meals .the_meal_box_1,
+.dishes .meals .the_meal_box_1,
+.desserts .meals .the_meal_box_1 {
   -webkit-animation: fade 2000ms;
           animation: fade 2000ms;
 }
-.menu .appetizers .meals .the_meal_box_2,
-.menu .dishes .meals .the_meal_box_2,
-.menu .desserts .meals .the_meal_box_2 {
+.appetizers .meals .the_meal_box_2,
+.dishes .meals .the_meal_box_2,
+.desserts .meals .the_meal_box_2 {
   -webkit-animation: fade 4000ms;
           animation: fade 4000ms;
 }
-.menu .appetizers .meals .the_meal_box_3,
-.menu .dishes .meals .the_meal_box_3,
-.menu .desserts .meals .the_meal_box_3 {
+.appetizers .meals .the_meal_box_3,
+.dishes .meals .the_meal_box_3,
+.desserts .meals .the_meal_box_3 {
   -webkit-animation: fade 6000ms;
           animation: fade 6000ms;
 }
-.menu .appetizers .meals .the_meal_box_1,
-.menu .appetizers .meals .the_meal_box_2,
-.menu .appetizers .meals .the_meal_box_3,
-.menu .dishes .meals .the_meal_box_1,
-.menu .dishes .meals .the_meal_box_2,
-.menu .dishes .meals .the_meal_box_3,
-.menu .desserts .meals .the_meal_box_1,
-.menu .desserts .meals .the_meal_box_2,
-.menu .desserts .meals .the_meal_box_3 {
+.appetizers .meals .the_meal_box_1,
+.appetizers .meals .the_meal_box_2,
+.appetizers .meals .the_meal_box_3,
+.dishes .meals .the_meal_box_1,
+.dishes .meals .the_meal_box_2,
+.dishes .meals .the_meal_box_3,
+.desserts .meals .the_meal_box_1,
+.desserts .meals .the_meal_box_2,
+.desserts .meals .the_meal_box_3 {
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -366,15 +384,15 @@ footer img {
   border-radius: 15px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
-.menu .appetizers .meals .the_meal_box_1 .check,
-.menu .appetizers .meals .the_meal_box_2 .check,
-.menu .appetizers .meals .the_meal_box_3 .check,
-.menu .dishes .meals .the_meal_box_1 .check,
-.menu .dishes .meals .the_meal_box_2 .check,
-.menu .dishes .meals .the_meal_box_3 .check,
-.menu .desserts .meals .the_meal_box_1 .check,
-.menu .desserts .meals .the_meal_box_2 .check,
-.menu .desserts .meals .the_meal_box_3 .check {
+.appetizers .meals .the_meal_box_1 .check,
+.appetizers .meals .the_meal_box_2 .check,
+.appetizers .meals .the_meal_box_3 .check,
+.dishes .meals .the_meal_box_1 .check,
+.dishes .meals .the_meal_box_2 .check,
+.dishes .meals .the_meal_box_3 .check,
+.desserts .meals .the_meal_box_1 .check,
+.desserts .meals .the_meal_box_2 .check,
+.desserts .meals .the_meal_box_3 .check {
   visibility: hidden;
   display: flex;
   justify-content: center;
@@ -385,142 +403,144 @@ footer img {
   border-radius: 0 15px 15px 0;
   font-size: x-large;
 }
-.menu .appetizers .meals .the_meal_box_1 .check i,
-.menu .appetizers .meals .the_meal_box_2 .check i,
-.menu .appetizers .meals .the_meal_box_3 .check i,
-.menu .dishes .meals .the_meal_box_1 .check i,
-.menu .dishes .meals .the_meal_box_2 .check i,
-.menu .dishes .meals .the_meal_box_3 .check i,
-.menu .desserts .meals .the_meal_box_1 .check i,
-.menu .desserts .meals .the_meal_box_2 .check i,
-.menu .desserts .meals .the_meal_box_3 .check i {
+.appetizers .meals .the_meal_box_1 .check i,
+.appetizers .meals .the_meal_box_2 .check i,
+.appetizers .meals .the_meal_box_3 .check i,
+.dishes .meals .the_meal_box_1 .check i,
+.dishes .meals .the_meal_box_2 .check i,
+.dishes .meals .the_meal_box_3 .check i,
+.desserts .meals .the_meal_box_1 .check i,
+.desserts .meals .the_meal_box_2 .check i,
+.desserts .meals .the_meal_box_3 .check i {
   transform: rotate(140deg);
 }
-.menu .appetizers .meals .the_meal_box_1 .alltext,
-.menu .appetizers .meals .the_meal_box_2 .alltext,
-.menu .appetizers .meals .the_meal_box_3 .alltext,
-.menu .dishes .meals .the_meal_box_1 .alltext,
-.menu .dishes .meals .the_meal_box_2 .alltext,
-.menu .dishes .meals .the_meal_box_3 .alltext,
-.menu .desserts .meals .the_meal_box_1 .alltext,
-.menu .desserts .meals .the_meal_box_2 .alltext,
-.menu .desserts .meals .the_meal_box_3 .alltext {
+.appetizers .meals .the_meal_box_1 .alltext,
+.appetizers .meals .the_meal_box_2 .alltext,
+.appetizers .meals .the_meal_box_3 .alltext,
+.dishes .meals .the_meal_box_1 .alltext,
+.dishes .meals .the_meal_box_2 .alltext,
+.dishes .meals .the_meal_box_3 .alltext,
+.desserts .meals .the_meal_box_1 .alltext,
+.desserts .meals .the_meal_box_2 .alltext,
+.desserts .meals .the_meal_box_3 .alltext {
   width: 300%;
   display: flex;
   justify-content: space-between;
   padding: 13px 0 13px 13px;
   margin-right: 10px;
 }
-.menu .appetizers .meals .the_meal_box_1 .alltext .meal_text,
-.menu .appetizers .meals .the_meal_box_2 .alltext .meal_text,
-.menu .appetizers .meals .the_meal_box_3 .alltext .meal_text,
-.menu .dishes .meals .the_meal_box_1 .alltext .meal_text,
-.menu .dishes .meals .the_meal_box_2 .alltext .meal_text,
-.menu .dishes .meals .the_meal_box_3 .alltext .meal_text,
-.menu .desserts .meals .the_meal_box_1 .alltext .meal_text,
-.menu .desserts .meals .the_meal_box_2 .alltext .meal_text,
-.menu .desserts .meals .the_meal_box_3 .alltext .meal_text {
+.appetizers .meals .the_meal_box_1 .alltext .meal_text,
+.appetizers .meals .the_meal_box_2 .alltext .meal_text,
+.appetizers .meals .the_meal_box_3 .alltext .meal_text,
+.dishes .meals .the_meal_box_1 .alltext .meal_text,
+.dishes .meals .the_meal_box_2 .alltext .meal_text,
+.dishes .meals .the_meal_box_3 .alltext .meal_text,
+.desserts .meals .the_meal_box_1 .alltext .meal_text,
+.desserts .meals .the_meal_box_2 .alltext .meal_text,
+.desserts .meals .the_meal_box_3 .alltext .meal_text {
   flex-direction: column;
   width: 88%;
 }
-.menu .appetizers .meals .the_meal_box_1 .alltext h3,
-.menu .appetizers .meals .the_meal_box_2 .alltext h3,
-.menu .appetizers .meals .the_meal_box_3 .alltext h3,
-.menu .dishes .meals .the_meal_box_1 .alltext h3,
-.menu .dishes .meals .the_meal_box_2 .alltext h3,
-.menu .dishes .meals .the_meal_box_3 .alltext h3,
-.menu .desserts .meals .the_meal_box_1 .alltext h3,
-.menu .desserts .meals .the_meal_box_2 .alltext h3,
-.menu .desserts .meals .the_meal_box_3 .alltext h3 {
+.appetizers .meals .the_meal_box_1 .alltext h3,
+.appetizers .meals .the_meal_box_2 .alltext h3,
+.appetizers .meals .the_meal_box_3 .alltext h3,
+.dishes .meals .the_meal_box_1 .alltext h3,
+.dishes .meals .the_meal_box_2 .alltext h3,
+.dishes .meals .the_meal_box_3 .alltext h3,
+.desserts .meals .the_meal_box_1 .alltext h3,
+.desserts .meals .the_meal_box_2 .alltext h3,
+.desserts .meals .the_meal_box_3 .alltext h3 {
   margin-top: 0;
   margin-bottom: 0;
   font-weight: bolder;
 }
-.menu .appetizers .meals .the_meal_box_1 .alltext p,
-.menu .appetizers .meals .the_meal_box_2 .alltext p,
-.menu .appetizers .meals .the_meal_box_3 .alltext p,
-.menu .dishes .meals .the_meal_box_1 .alltext p,
-.menu .dishes .meals .the_meal_box_2 .alltext p,
-.menu .dishes .meals .the_meal_box_3 .alltext p,
-.menu .desserts .meals .the_meal_box_1 .alltext p,
-.menu .desserts .meals .the_meal_box_2 .alltext p,
-.menu .desserts .meals .the_meal_box_3 .alltext p {
+.appetizers .meals .the_meal_box_1 .alltext p,
+.appetizers .meals .the_meal_box_2 .alltext p,
+.appetizers .meals .the_meal_box_3 .alltext p,
+.dishes .meals .the_meal_box_1 .alltext p,
+.dishes .meals .the_meal_box_2 .alltext p,
+.dishes .meals .the_meal_box_3 .alltext p,
+.desserts .meals .the_meal_box_1 .alltext p,
+.desserts .meals .the_meal_box_2 .alltext p,
+.desserts .meals .the_meal_box_3 .alltext p {
   margin: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.menu .appetizers .meals .the_meal_box_1 .alltext .price,
-.menu .appetizers .meals .the_meal_box_2 .alltext .price,
-.menu .appetizers .meals .the_meal_box_3 .alltext .price,
-.menu .dishes .meals .the_meal_box_1 .alltext .price,
-.menu .dishes .meals .the_meal_box_2 .alltext .price,
-.menu .dishes .meals .the_meal_box_3 .alltext .price,
-.menu .desserts .meals .the_meal_box_1 .alltext .price,
-.menu .desserts .meals .the_meal_box_2 .alltext .price,
-.menu .desserts .meals .the_meal_box_3 .alltext .price {
+.appetizers .meals .the_meal_box_1 .alltext .price,
+.appetizers .meals .the_meal_box_2 .alltext .price,
+.appetizers .meals .the_meal_box_3 .alltext .price,
+.dishes .meals .the_meal_box_1 .alltext .price,
+.dishes .meals .the_meal_box_2 .alltext .price,
+.dishes .meals .the_meal_box_3 .alltext .price,
+.desserts .meals .the_meal_box_1 .alltext .price,
+.desserts .meals .the_meal_box_2 .alltext .price,
+.desserts .meals .the_meal_box_3 .alltext .price {
   align-self: end;
 }
-.menu .appetizers .meals .the_meal_box_1:hover .check,
-.menu .appetizers .meals .the_meal_box_2:hover .check,
-.menu .appetizers .meals .the_meal_box_3:hover .check,
-.menu .dishes .meals .the_meal_box_1:hover .check,
-.menu .dishes .meals .the_meal_box_2:hover .check,
-.menu .dishes .meals .the_meal_box_3:hover .check,
-.menu .desserts .meals .the_meal_box_1:hover .check,
-.menu .desserts .meals .the_meal_box_2:hover .check,
-.menu .desserts .meals .the_meal_box_3:hover .check {
+.appetizers .meals .the_meal_box_1:hover .check,
+.appetizers .meals .the_meal_box_2:hover .check,
+.appetizers .meals .the_meal_box_3:hover .check,
+.dishes .meals .the_meal_box_1:hover .check,
+.dishes .meals .the_meal_box_2:hover .check,
+.dishes .meals .the_meal_box_3:hover .check,
+.desserts .meals .the_meal_box_1:hover .check,
+.desserts .meals .the_meal_box_2:hover .check,
+.desserts .meals .the_meal_box_3:hover .check {
   visibility: visible;
   -webkit-animation: 500ms ease-in;
           animation: 500ms ease-in;
   overflow: hidden;
 }
-.menu .appetizers .meals .the_meal_box_1:hover .check i,
-.menu .appetizers .meals .the_meal_box_2:hover .check i,
-.menu .appetizers .meals .the_meal_box_3:hover .check i,
-.menu .dishes .meals .the_meal_box_1:hover .check i,
-.menu .dishes .meals .the_meal_box_2:hover .check i,
-.menu .dishes .meals .the_meal_box_3:hover .check i,
-.menu .desserts .meals .the_meal_box_1:hover .check i,
-.menu .desserts .meals .the_meal_box_2:hover .check i,
-.menu .desserts .meals .the_meal_box_3:hover .check i {
+.appetizers .meals .the_meal_box_1:hover .check i,
+.appetizers .meals .the_meal_box_2:hover .check i,
+.appetizers .meals .the_meal_box_3:hover .check i,
+.dishes .meals .the_meal_box_1:hover .check i,
+.dishes .meals .the_meal_box_2:hover .check i,
+.dishes .meals .the_meal_box_3:hover .check i,
+.desserts .meals .the_meal_box_1:hover .check i,
+.desserts .meals .the_meal_box_2:hover .check i,
+.desserts .meals .the_meal_box_3:hover .check i {
   transform: rotate(360deg);
   transition: 500ms ease-in-out;
 }
-.menu .appetizers .meals .the_meal_box_1:hover .alltext,
-.menu .appetizers .meals .the_meal_box_2:hover .alltext,
-.menu .appetizers .meals .the_meal_box_3:hover .alltext,
-.menu .dishes .meals .the_meal_box_1:hover .alltext,
-.menu .dishes .meals .the_meal_box_2:hover .alltext,
-.menu .dishes .meals .the_meal_box_3:hover .alltext,
-.menu .desserts .meals .the_meal_box_1:hover .alltext,
-.menu .desserts .meals .the_meal_box_2:hover .alltext,
-.menu .desserts .meals .the_meal_box_3:hover .alltext {
+.appetizers .meals .the_meal_box_1:hover .alltext,
+.appetizers .meals .the_meal_box_2:hover .alltext,
+.appetizers .meals .the_meal_box_3:hover .alltext,
+.dishes .meals .the_meal_box_1:hover .alltext,
+.dishes .meals .the_meal_box_2:hover .alltext,
+.dishes .meals .the_meal_box_3:hover .alltext,
+.desserts .meals .the_meal_box_1:hover .alltext,
+.desserts .meals .the_meal_box_2:hover .alltext,
+.desserts .meals .the_meal_box_3:hover .alltext {
   width: 75%;
   transition: all 500ms;
 }
-.menu .appetizers .meals .the_meal_box_1:hover h3,
-.menu .appetizers .meals .the_meal_box_1:hover p,
-.menu .appetizers .meals .the_meal_box_2:hover h3,
-.menu .appetizers .meals .the_meal_box_2:hover p,
-.menu .appetizers .meals .the_meal_box_3:hover h3,
-.menu .appetizers .meals .the_meal_box_3:hover p,
-.menu .dishes .meals .the_meal_box_1:hover h3,
-.menu .dishes .meals .the_meal_box_1:hover p,
-.menu .dishes .meals .the_meal_box_2:hover h3,
-.menu .dishes .meals .the_meal_box_2:hover p,
-.menu .dishes .meals .the_meal_box_3:hover h3,
-.menu .dishes .meals .the_meal_box_3:hover p,
-.menu .desserts .meals .the_meal_box_1:hover h3,
-.menu .desserts .meals .the_meal_box_1:hover p,
-.menu .desserts .meals .the_meal_box_2:hover h3,
-.menu .desserts .meals .the_meal_box_2:hover p,
-.menu .desserts .meals .the_meal_box_3:hover h3,
-.menu .desserts .meals .the_meal_box_3:hover p {
+.appetizers .meals .the_meal_box_1:hover h3,
+.appetizers .meals .the_meal_box_1:hover p,
+.appetizers .meals .the_meal_box_2:hover h3,
+.appetizers .meals .the_meal_box_2:hover p,
+.appetizers .meals .the_meal_box_3:hover h3,
+.appetizers .meals .the_meal_box_3:hover p,
+.dishes .meals .the_meal_box_1:hover h3,
+.dishes .meals .the_meal_box_1:hover p,
+.dishes .meals .the_meal_box_2:hover h3,
+.dishes .meals .the_meal_box_2:hover p,
+.dishes .meals .the_meal_box_3:hover h3,
+.dishes .meals .the_meal_box_3:hover p,
+.desserts .meals .the_meal_box_1:hover h3,
+.desserts .meals .the_meal_box_1:hover p,
+.desserts .meals .the_meal_box_2:hover h3,
+.desserts .meals .the_meal_box_2:hover p,
+.desserts .meals .the_meal_box_3:hover h3,
+.desserts .meals .the_meal_box_3:hover p {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+/*ANIMATION MOVE UP MENU */
 @-webkit-keyframes moveup {
   0% {
     margin-top: 30px;
@@ -537,6 +557,7 @@ footer img {
     margin-top: 20px;
   }
 }
+/* ANIMATION FADE MENU */
 @-webkit-keyframes fade {
   from {
     opacity: 0;
@@ -553,7 +574,6 @@ footer img {
     opacity: 1;
   }
 }
-
 @media all and (min-width: 992px) {
   .infos h1 {
     width: 100%;
@@ -656,10 +676,10 @@ footer img {
     display: block;
     margin-top: -120%;
   }
-  .heart:active .empty_heart {
+  .heart:hover .empty_heart {
     visibility: hidden;
   }
-  .heart:active .full_heart {
+  .heart:hover .full_heart {
     visibility: visible;
     -webkit-animation: fillUp 3s liner;
             animation: fillUp 3s liner;
