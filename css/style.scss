@@ -451,7 +451,6 @@ footer {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                width: 20%;
                 color: white;
                 background-color: $color-mint;
                 border-radius: 0 15px 15px 0;
@@ -495,7 +494,8 @@ footer {
             &:hover {
                 .check {
                     visibility: visible;
-                    animation: 500ms ease-in;
+                    width: 20%;
+                    transition: all 500ms;
                     overflow: hidden;
 
                     i {
@@ -514,7 +514,6 @@ footer {
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
-
                 }
             }
         }

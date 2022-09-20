@@ -454,7 +454,6 @@ footer img {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 20%;
   color: white;
   background-color: #99E2D0;
   border-radius: 0 15px 15px 0;
@@ -546,8 +545,8 @@ footer img {
 .desserts .meals .the_meal_box_2:hover .check,
 .desserts .meals .the_meal_box_3:hover .check {
   visibility: visible;
-  -webkit-animation: 500ms ease-in;
-          animation: 500ms ease-in;
+  width: 20%;
+  transition: all 500ms;
   overflow: hidden;
 }
 .appetizers .meals .the_meal_box_1:hover .check i,
