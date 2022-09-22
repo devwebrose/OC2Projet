@@ -10,6 +10,7 @@ body {
   display: flex;
   justify-content: center;
   inset: 0;
+  z-index: 20;
   background-color: white;
   opacity: 0.9;
   -webkit-animation: disappear 3s;
@@ -37,33 +38,6 @@ body {
           animation-fill-mode: both;
 }
 
-@-webkit-keyframes rotate {
-  0% {
-    transform: rotate(360deg) scale(1);
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(360deg) scale(1);
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@-webkit-keyframes disappear {
-  100% {
-    visibility: collapse;
-  }
-}
-@keyframes disappear {
-  100% {
-    visibility: collapse;
-  }
-}
 .location,
 .infos {
   padding-left: 20px;
@@ -94,14 +68,24 @@ body {
   text-align: center;
   font-size: 1.6em;
 }
+@media all and (min-width: 992px) {
+  .infos h1 {
+    width: 100%;
+    font-size: 2.5em;
+  }
+}
 .infos p {
   text-align: center;
   font-weight: lighter;
   font-size: larger;
 }
+@media all and (min-width: 992px) {
+  .infos p {
+    font-size: x-large;
+  }
+}
 
-header button,
-.menu button {
+button {
   display: block;
   margin: 30px auto 30px auto;
   height: 30px;
@@ -114,11 +98,38 @@ header button,
   font-family: "Roboto", sans-serif;
   font-weight: 500;
 }
+@media all and (min-width: 992px) {
+  button {
+    padding-bottom: 32px;
+    font-size: large;
+    transform: scaleX(1);
+    transition-property: transform;
+    transition-duration: 0.5s;
+  }
+}
+button:hover {
+  opacity: 0.7;
+  box-shadow: 0px 15px 20px #999;
+}
+@media all and (min-width: 992px) {
+  button:hover {
+    transform: scale(1.1);
+    opacity: 0.7;
+    box-shadow: 0px 15px 20px #999;
+    cursor: pointer;
+  }
+}
 
 .fonction h2,
 .restaurants h2 {
   margin: 10% 0 10% 5%;
   font-weight: bolder;
+}
+@media all and (min-width: 992px) {
+  .fonction h2,
+.restaurants h2 {
+    margin: 3%;
+  }
 }
 
 .steps {
@@ -128,6 +139,13 @@ header button,
   margin-bottom: 10%;
   padding-right: 10px;
   gap: 25px;
+}
+@media all and (min-width: 992px) {
+  .steps {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 3% 5% 3%;
+  }
 }
 .steps .step {
   width: 80%;
@@ -144,24 +162,47 @@ header button,
   font-family: "Roboto", sans-serif;
   gap: 25px;
 }
-.steps :hover {
-  background-color: rgba(146, 86, 220, 0.1450980392);
+@media all and (min-width: 992px) {
+  .steps .step {
+    height: 30px;
+    width: 25%;
+    padding: 30px;
+    margin-left: 0;
+    gap: 30px;
+    transform: scaleX(1);
+    transition-property: transform;
+    transition-duration: 0.5s;
+  }
 }
-.steps :hover i {
-  color: #9356DC;
-}
-.steps i {
-  color: #6E6E6E;
-  font-size: large;
-}
-
-.number {
+.steps .step .number {
   border-radius: 50%;
   background-color: #9356DC;
   margin-left: -50px;
   padding: 5px 10px 5px 10px;
   font-size: small;
   color: white;
+}
+@media all and (min-width: 992px) {
+  .steps .step .number {
+    font-weight: bold;
+  }
+}
+.steps .step i {
+  color: #6E6E6E;
+  font-size: large;
+}
+.steps .step:hover {
+  background-color: rgba(146, 86, 220, 0.1450980392);
+}
+@media all and (min-width: 992px) {
+  .steps .step:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    background-color: rgba(146, 86, 220, 0.1450980392);
+  }
+}
+.steps .step:hover i {
+  color: #9356DC;
 }
 
 .restaurants {
@@ -172,38 +213,56 @@ header button,
   padding-top: 5%;
   padding-bottom: 5%;
 }
+@media all and (min-width: 992px) {
+  .restaurants {
+    margin-bottom: 0;
+  }
+}
 .restaurants a {
   text-decoration: none;
 }
-
-.cards {
+.restaurants .cards {
   display: flex;
   flex-direction: column;
   gap: 20px;
   padding-left: 5%;
   padding-right: 5%;
 }
-
-.rest_card {
+@media all and (min-width: 992px) {
+  .restaurants .cards {
+    flex-direction: row;
+    margin-left: 3%;
+    margin-right: 3%;
+    padding: 0;
+  }
+}
+.restaurants .cards .rest_card {
   height: 250px;
   border-radius: 15px;
   box-shadow: 0px 5px 20px #999;
   position: relative;
 }
-
-.card_image {
+@media all and (min-width: 992px) {
+  .restaurants .cards .rest_card {
+    height: 260px;
+    width: 25%;
+    transform: scaleX(1);
+    transition-property: transform;
+    transition-duration: 0.5s;
+  }
+}
+.restaurants .cards .rest_card .card_image {
   height: 70%;
   position: relative;
 }
-.card_image img {
+.restaurants .cards .rest_card .card_image img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 15px 15px 0px 0px;
 }
-
-.new {
+.restaurants .cards .rest_card .card_image .new {
   position: absolute;
   font-weight: bold;
   border-radius: 2px;
@@ -213,22 +272,20 @@ header button,
   top: 5%;
   right: 5%;
 }
-
-.card_body {
+.restaurants .cards .rest_card .card_body {
   display: flex;
   flex-direction: column;
   padding-left: 13px;
   color: black;
 }
-.card_body h3 {
+.restaurants .cards .rest_card .card_body h3 {
   margin-top: 12px;
   margin-bottom: 2px;
 }
-.card_body p {
+.restaurants .cards .rest_card .card_body p {
   margin: 0;
 }
-
-.heart {
+.restaurants .cards .rest_card .heart {
   display: block;
   margin: 5%;
   font-size: 25px;
@@ -237,110 +294,139 @@ header button,
   top: 70%;
   left: 80%;
 }
-.heart .empty_heart {
-  color: black;
+.restaurants .cards .rest_card .heart .custom_checkbox input[type=checkbox],
+.restaurants .cards .rest_card .heart .custom_checkbox .checked {
+  display: none;
 }
-.heart .full_heart {
+.restaurants .cards .rest_card .heart .custom_checkbox input[type=checkbox]:checked ~ .checked {
+  display: inline-block;
   background: linear-gradient(to top, #FF79DA, #9356DC);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-  visibility: hidden;
-  display: block;
-  margin-top: -120%;
+  -webkit-animation: fillup 3s;
+          animation: fillup 3s;
 }
-.heart:hover .empty_heart {
-  visibility: hidden;
+.restaurants .cards .rest_card .heart .custom_checkbox input[type=checkbox]:checked ~ .unchecked {
+  display: none;
 }
-.heart:hover .full_heart {
-  visibility: visible;
-  -webkit-animation: fillup 2s;
-          animation: fillup 2s;
-}
-
-@-webkit-keyframes fillup {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
+@media all and (min-width: 992px) {
+  .restaurants .cards .rest_card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
   }
 }
 
-@keyframes fillup {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 footer {
   padding: 5% 0 3% 5%;
   background-color: #5C5C5C;
   color: white;
+}
+@media all and (min-width: 992px) {
+  footer {
+    padding: 3% 0 3% 3%;
+  }
 }
 footer img {
   width: 30%;
   color: white;
   filter: invert(100%);
 }
-
-.links a {
+@media all and (min-width: 992px) {
+  footer img {
+    width: 15%;
+    margin-bottom: 1%;
+  }
+}
+footer .links a {
   color: white;
   text-decoration: none;
 }
-
-.link_1,
-.link_2 {
+@media all and (min-width: 992px) {
+  footer .links {
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+  }
+  footer .links i {
+    display: block;
+    margin: auto 16px auto 0;
+  }
+}
+footer .links .link_1,
+footer .links .link_2 {
   display: flex;
   flex-direction: row;
   font-weight: bold;
 }
-
-.link_1 i {
+footer .links .link_1 i {
   display: block;
   margin: auto 16px auto 0;
 }
-
-.link_2 i {
+footer .links .link_2 i {
   margin-right: 10px;
 }
-.link_2 p {
+footer .links .link_2 p {
   margin: 0;
 }
+@media all and (min-width: 992px) {
+  footer .links .link_2 {
+    align-items: center;
+  }
+}
 
-/* PAGES DES MENUS */
-.title_m {
+header .title_m {
   display: flex;
   gap: 0;
+  align-items: center;
+  padding-left: 5%;
 }
-.title_m i {
+header .title_m i {
   color: black;
-  margin-left: 20px;
-  padding-top: 40%;
+  font-size: x-large;
 }
-
-.title img,
-.title_m img {
+@media all and (min-width: 992px) {
+  header .title_m i {
+    width: 25%;
+    font-size: xx-large;
+  }
+}
+header .title_m img {
+  margin-left: 21%;
+}
+header .title img,
+header .title_m img {
   display: block;
   margin: auto;
   width: 40%;
   padding-top: 2%;
   padding-bottom: 2%;
 }
-
-.title_m img {
-  margin-left: 21%;
+@media all and (min-width: 992px) {
+  header .title img,
+header .title_m img {
+    width: 25%;
+  }
 }
 
 .pic {
   width: 100%;
   height: 210px;
 }
-.pic img {
+@media all and (min-width: 992px) {
+  .pic {
+    height: 200px;
+  }
+}
+
+img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+@media all and (min-width: 992px) {
+  img {
+    height: 100%;
+  }
 }
 
 .menu {
@@ -349,55 +435,80 @@ footer img {
   padding: 5%;
   position: relative;
 }
-.menu h2 {
-  margin-left: 0;
-  margin-bottom: 5px;
-  font-weight: 400;
+@media all and (min-width: 992px) {
+  .menu {
+    border-radius: 0;
+  }
 }
 .menu .menu_title {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-right: 10px;
+  padding-right: 5%;
 }
-.menu .menu_title h1 {
+@media all and (min-width: 768px) and (max-width: 992px) {
+  .menu .menu_title {
+    padding-right: 10%;
+  }
+}
+.menu h1 {
   font-family: "Shrikhand", cursive;
   font-size: xx-large;
 }
-.menu .menu_title .heart_menu .empty_heart {
+.menu .heart_menu {
   font-size: xx-large;
-  position: absolute;
 }
-.menu .menu_title .heart_menu .full_heart {
-  font-size: xx-large;
+.menu .heart_menu .custom_checkbox input[type=checkbox],
+.menu .heart_menu .custom_checkbox .checked {
+  display: none;
+}
+.menu .heart_menu .custom_checkbox input[type=checkbox]:checked ~ .checked {
+  display: inline-block;
   background: linear-gradient(to top, #FF79DA, #9356DC);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-  visibility: hidden;
+  -webkit-animation: fillup 3s;
+          animation: fillup 3s;
 }
-.menu .menu_title .heart_menu:hover .empty_heart {
-  visibility: hidden;
-}
-.menu .menu_title .heart_menu:hover .full_heart {
-  visibility: visible;
-  -webkit-animation: fillup 2s;
-          animation: fillup 2s;
+.menu .heart_menu .custom_checkbox input[type=checkbox]:checked ~ .unchecked {
+  display: none;
 }
 
-.underline {
+@media all and (min-width: 992px) {
+  .the_food {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.the_food .appetizers,
+.the_food .dishes,
+.the_food .desserts {
+  margin-bottom: 50px;
+}
+@media all and (min-width: 992px) {
+  .the_food .appetizers,
+.the_food .dishes,
+.the_food .desserts {
+    width: 30%;
+  }
+}
+.the_food .appetizers h2,
+.the_food .dishes h2,
+.the_food .desserts h2 {
+  margin-left: 0;
+  margin-bottom: 5px;
+  font-weight: 400;
+}
+.the_food .appetizers .underline,
+.the_food .dishes .underline,
+.the_food .desserts .underline {
   width: 60px;
   height: 5px;
   background-color: #99E2D0;
 }
-
-.appetizers,
-.dishes,
-.desserts {
-  margin-bottom: 50px;
-}
-.appetizers .meals,
-.dishes .meals,
-.desserts .meals {
+.the_food .appetizers .meals,
+.the_food .dishes .meals,
+.the_food .desserts .meals {
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -405,33 +516,33 @@ footer img {
   -webkit-animation: moveup 1000ms;
           animation: moveup 1000ms;
 }
-.appetizers .meals .the_meal_box_1,
-.dishes .meals .the_meal_box_1,
-.desserts .meals .the_meal_box_1 {
+.the_food .appetizers .meals .the_meal_box_1,
+.the_food .dishes .meals .the_meal_box_1,
+.the_food .desserts .meals .the_meal_box_1 {
   -webkit-animation: fade 2000ms;
           animation: fade 2000ms;
 }
-.appetizers .meals .the_meal_box_2,
-.dishes .meals .the_meal_box_2,
-.desserts .meals .the_meal_box_2 {
+.the_food .appetizers .meals .the_meal_box_2,
+.the_food .dishes .meals .the_meal_box_2,
+.the_food .desserts .meals .the_meal_box_2 {
   -webkit-animation: fade 4000ms;
           animation: fade 4000ms;
 }
-.appetizers .meals .the_meal_box_3,
-.dishes .meals .the_meal_box_3,
-.desserts .meals .the_meal_box_3 {
+.the_food .appetizers .meals .the_meal_box_3,
+.the_food .dishes .meals .the_meal_box_3,
+.the_food .desserts .meals .the_meal_box_3 {
   -webkit-animation: fade 6000ms;
           animation: fade 6000ms;
 }
-.appetizers .meals .the_meal_box_1,
-.appetizers .meals .the_meal_box_2,
-.appetizers .meals .the_meal_box_3,
-.dishes .meals .the_meal_box_1,
-.dishes .meals .the_meal_box_2,
-.dishes .meals .the_meal_box_3,
-.desserts .meals .the_meal_box_1,
-.desserts .meals .the_meal_box_2,
-.desserts .meals .the_meal_box_3 {
+.the_food .appetizers .meals .the_meal_box_1,
+.the_food .appetizers .meals .the_meal_box_2,
+.the_food .appetizers .meals .the_meal_box_3,
+.the_food .dishes .meals .the_meal_box_1,
+.the_food .dishes .meals .the_meal_box_2,
+.the_food .dishes .meals .the_meal_box_3,
+.the_food .desserts .meals .the_meal_box_1,
+.the_food .desserts .meals .the_meal_box_2,
+.the_food .desserts .meals .the_meal_box_3 {
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -441,15 +552,15 @@ footer img {
   border-radius: 15px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
-.appetizers .meals .the_meal_box_1 .check,
-.appetizers .meals .the_meal_box_2 .check,
-.appetizers .meals .the_meal_box_3 .check,
-.dishes .meals .the_meal_box_1 .check,
-.dishes .meals .the_meal_box_2 .check,
-.dishes .meals .the_meal_box_3 .check,
-.desserts .meals .the_meal_box_1 .check,
-.desserts .meals .the_meal_box_2 .check,
-.desserts .meals .the_meal_box_3 .check {
+.the_food .appetizers .meals .the_meal_box_1 .check,
+.the_food .appetizers .meals .the_meal_box_2 .check,
+.the_food .appetizers .meals .the_meal_box_3 .check,
+.the_food .dishes .meals .the_meal_box_1 .check,
+.the_food .dishes .meals .the_meal_box_2 .check,
+.the_food .dishes .meals .the_meal_box_3 .check,
+.the_food .desserts .meals .the_meal_box_1 .check,
+.the_food .desserts .meals .the_meal_box_2 .check,
+.the_food .desserts .meals .the_meal_box_3 .check {
   visibility: hidden;
   display: flex;
   justify-content: center;
@@ -459,144 +570,212 @@ footer img {
   border-radius: 0 15px 15px 0;
   font-size: x-large;
 }
-.appetizers .meals .the_meal_box_1 .check i,
-.appetizers .meals .the_meal_box_2 .check i,
-.appetizers .meals .the_meal_box_3 .check i,
-.dishes .meals .the_meal_box_1 .check i,
-.dishes .meals .the_meal_box_2 .check i,
-.dishes .meals .the_meal_box_3 .check i,
-.desserts .meals .the_meal_box_1 .check i,
-.desserts .meals .the_meal_box_2 .check i,
-.desserts .meals .the_meal_box_3 .check i {
+.the_food .appetizers .meals .the_meal_box_1 .check i,
+.the_food .appetizers .meals .the_meal_box_2 .check i,
+.the_food .appetizers .meals .the_meal_box_3 .check i,
+.the_food .dishes .meals .the_meal_box_1 .check i,
+.the_food .dishes .meals .the_meal_box_2 .check i,
+.the_food .dishes .meals .the_meal_box_3 .check i,
+.the_food .desserts .meals .the_meal_box_1 .check i,
+.the_food .desserts .meals .the_meal_box_2 .check i,
+.the_food .desserts .meals .the_meal_box_3 .check i {
   transform: rotate(140deg);
 }
-.appetizers .meals .the_meal_box_1 .alltext,
-.appetizers .meals .the_meal_box_2 .alltext,
-.appetizers .meals .the_meal_box_3 .alltext,
-.dishes .meals .the_meal_box_1 .alltext,
-.dishes .meals .the_meal_box_2 .alltext,
-.dishes .meals .the_meal_box_3 .alltext,
-.desserts .meals .the_meal_box_1 .alltext,
-.desserts .meals .the_meal_box_2 .alltext,
-.desserts .meals .the_meal_box_3 .alltext {
-  width: 300%;
+.the_food .appetizers .meals .the_meal_box_1 .alltext,
+.the_food .appetizers .meals .the_meal_box_2 .alltext,
+.the_food .appetizers .meals .the_meal_box_3 .alltext,
+.the_food .dishes .meals .the_meal_box_1 .alltext,
+.the_food .dishes .meals .the_meal_box_2 .alltext,
+.the_food .dishes .meals .the_meal_box_3 .alltext,
+.the_food .desserts .meals .the_meal_box_1 .alltext,
+.the_food .desserts .meals .the_meal_box_2 .alltext,
+.the_food .desserts .meals .the_meal_box_3 .alltext {
+  width: 88%;
   display: flex;
   justify-content: space-between;
-  padding: 13px 0 13px 13px;
+  padding: 10px 0 10px 10px;
   margin-right: 10px;
 }
-.appetizers .meals .the_meal_box_1 .alltext .meal_text,
-.appetizers .meals .the_meal_box_2 .alltext .meal_text,
-.appetizers .meals .the_meal_box_3 .alltext .meal_text,
-.dishes .meals .the_meal_box_1 .alltext .meal_text,
-.dishes .meals .the_meal_box_2 .alltext .meal_text,
-.dishes .meals .the_meal_box_3 .alltext .meal_text,
-.desserts .meals .the_meal_box_1 .alltext .meal_text,
-.desserts .meals .the_meal_box_2 .alltext .meal_text,
-.desserts .meals .the_meal_box_3 .alltext .meal_text {
+.the_food .appetizers .meals .the_meal_box_1 .alltext .meal_text,
+.the_food .appetizers .meals .the_meal_box_2 .alltext .meal_text,
+.the_food .appetizers .meals .the_meal_box_3 .alltext .meal_text,
+.the_food .dishes .meals .the_meal_box_1 .alltext .meal_text,
+.the_food .dishes .meals .the_meal_box_2 .alltext .meal_text,
+.the_food .dishes .meals .the_meal_box_3 .alltext .meal_text,
+.the_food .desserts .meals .the_meal_box_1 .alltext .meal_text,
+.the_food .desserts .meals .the_meal_box_2 .alltext .meal_text,
+.the_food .desserts .meals .the_meal_box_3 .alltext .meal_text {
   flex-direction: column;
   width: 88%;
 }
-.appetizers .meals .the_meal_box_1 .alltext h3,
-.appetizers .meals .the_meal_box_2 .alltext h3,
-.appetizers .meals .the_meal_box_3 .alltext h3,
-.dishes .meals .the_meal_box_1 .alltext h3,
-.dishes .meals .the_meal_box_2 .alltext h3,
-.dishes .meals .the_meal_box_3 .alltext h3,
-.desserts .meals .the_meal_box_1 .alltext h3,
-.desserts .meals .the_meal_box_2 .alltext h3,
-.desserts .meals .the_meal_box_3 .alltext h3 {
+.the_food .appetizers .meals .the_meal_box_1 .alltext h3,
+.the_food .appetizers .meals .the_meal_box_2 .alltext h3,
+.the_food .appetizers .meals .the_meal_box_3 .alltext h3,
+.the_food .dishes .meals .the_meal_box_1 .alltext h3,
+.the_food .dishes .meals .the_meal_box_2 .alltext h3,
+.the_food .dishes .meals .the_meal_box_3 .alltext h3,
+.the_food .desserts .meals .the_meal_box_1 .alltext h3,
+.the_food .desserts .meals .the_meal_box_2 .alltext h3,
+.the_food .desserts .meals .the_meal_box_3 .alltext h3 {
   margin-top: 0;
   margin-bottom: 0;
-  font-weight: bolder;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.appetizers .meals .the_meal_box_1 .alltext p,
-.appetizers .meals .the_meal_box_2 .alltext p,
-.appetizers .meals .the_meal_box_3 .alltext p,
-.dishes .meals .the_meal_box_1 .alltext p,
-.dishes .meals .the_meal_box_2 .alltext p,
-.dishes .meals .the_meal_box_3 .alltext p,
-.desserts .meals .the_meal_box_1 .alltext p,
-.desserts .meals .the_meal_box_2 .alltext p,
-.desserts .meals .the_meal_box_3 .alltext p {
+.the_food .appetizers .meals .the_meal_box_1 .alltext p,
+.the_food .appetizers .meals .the_meal_box_2 .alltext p,
+.the_food .appetizers .meals .the_meal_box_3 .alltext p,
+.the_food .dishes .meals .the_meal_box_1 .alltext p,
+.the_food .dishes .meals .the_meal_box_2 .alltext p,
+.the_food .dishes .meals .the_meal_box_3 .alltext p,
+.the_food .desserts .meals .the_meal_box_1 .alltext p,
+.the_food .desserts .meals .the_meal_box_2 .alltext p,
+.the_food .desserts .meals .the_meal_box_3 .alltext p {
   margin: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.appetizers .meals .the_meal_box_1 .alltext .price,
-.appetizers .meals .the_meal_box_2 .alltext .price,
-.appetizers .meals .the_meal_box_3 .alltext .price,
-.dishes .meals .the_meal_box_1 .alltext .price,
-.dishes .meals .the_meal_box_2 .alltext .price,
-.dishes .meals .the_meal_box_3 .alltext .price,
-.desserts .meals .the_meal_box_1 .alltext .price,
-.desserts .meals .the_meal_box_2 .alltext .price,
-.desserts .meals .the_meal_box_3 .alltext .price {
+.the_food .appetizers .meals .the_meal_box_1 .alltext .price,
+.the_food .appetizers .meals .the_meal_box_2 .alltext .price,
+.the_food .appetizers .meals .the_meal_box_3 .alltext .price,
+.the_food .dishes .meals .the_meal_box_1 .alltext .price,
+.the_food .dishes .meals .the_meal_box_2 .alltext .price,
+.the_food .dishes .meals .the_meal_box_3 .alltext .price,
+.the_food .desserts .meals .the_meal_box_1 .alltext .price,
+.the_food .desserts .meals .the_meal_box_2 .alltext .price,
+.the_food .desserts .meals .the_meal_box_3 .alltext .price {
   align-self: end;
 }
-.appetizers .meals .the_meal_box_1:hover .check,
-.appetizers .meals .the_meal_box_2:hover .check,
-.appetizers .meals .the_meal_box_3:hover .check,
-.dishes .meals .the_meal_box_1:hover .check,
-.dishes .meals .the_meal_box_2:hover .check,
-.dishes .meals .the_meal_box_3:hover .check,
-.desserts .meals .the_meal_box_1:hover .check,
-.desserts .meals .the_meal_box_2:hover .check,
-.desserts .meals .the_meal_box_3:hover .check {
+.the_food .appetizers .meals .the_meal_box_1:hover .check,
+.the_food .appetizers .meals .the_meal_box_2:hover .check,
+.the_food .appetizers .meals .the_meal_box_3:hover .check,
+.the_food .dishes .meals .the_meal_box_1:hover .check,
+.the_food .dishes .meals .the_meal_box_2:hover .check,
+.the_food .dishes .meals .the_meal_box_3:hover .check,
+.the_food .desserts .meals .the_meal_box_1:hover .check,
+.the_food .desserts .meals .the_meal_box_2:hover .check,
+.the_food .desserts .meals .the_meal_box_3:hover .check {
   visibility: visible;
   width: 20%;
   transition: all 500ms;
-  overflow: hidden;
 }
-.appetizers .meals .the_meal_box_1:hover .check i,
-.appetizers .meals .the_meal_box_2:hover .check i,
-.appetizers .meals .the_meal_box_3:hover .check i,
-.dishes .meals .the_meal_box_1:hover .check i,
-.dishes .meals .the_meal_box_2:hover .check i,
-.dishes .meals .the_meal_box_3:hover .check i,
-.desserts .meals .the_meal_box_1:hover .check i,
-.desserts .meals .the_meal_box_2:hover .check i,
-.desserts .meals .the_meal_box_3:hover .check i {
+.the_food .appetizers .meals .the_meal_box_1:hover .check i,
+.the_food .appetizers .meals .the_meal_box_2:hover .check i,
+.the_food .appetizers .meals .the_meal_box_3:hover .check i,
+.the_food .dishes .meals .the_meal_box_1:hover .check i,
+.the_food .dishes .meals .the_meal_box_2:hover .check i,
+.the_food .dishes .meals .the_meal_box_3:hover .check i,
+.the_food .desserts .meals .the_meal_box_1:hover .check i,
+.the_food .desserts .meals .the_meal_box_2:hover .check i,
+.the_food .desserts .meals .the_meal_box_3:hover .check i {
   transform: rotate(360deg);
-  transition: 500ms ease-in-out;
+  transition: 400ms ease-in-out;
 }
-.appetizers .meals .the_meal_box_1:hover .alltext,
-.appetizers .meals .the_meal_box_2:hover .alltext,
-.appetizers .meals .the_meal_box_3:hover .alltext,
-.dishes .meals .the_meal_box_1:hover .alltext,
-.dishes .meals .the_meal_box_2:hover .alltext,
-.dishes .meals .the_meal_box_3:hover .alltext,
-.desserts .meals .the_meal_box_1:hover .alltext,
-.desserts .meals .the_meal_box_2:hover .alltext,
-.desserts .meals .the_meal_box_3:hover .alltext {
+.the_food .appetizers .meals .the_meal_box_1:hover .alltext,
+.the_food .appetizers .meals .the_meal_box_2:hover .alltext,
+.the_food .appetizers .meals .the_meal_box_3:hover .alltext,
+.the_food .dishes .meals .the_meal_box_1:hover .alltext,
+.the_food .dishes .meals .the_meal_box_2:hover .alltext,
+.the_food .dishes .meals .the_meal_box_3:hover .alltext,
+.the_food .desserts .meals .the_meal_box_1:hover .alltext,
+.the_food .desserts .meals .the_meal_box_2:hover .alltext,
+.the_food .desserts .meals .the_meal_box_3:hover .alltext {
   width: 75%;
-  transition: all 500ms;
+  transition: all 100ms;
 }
-.appetizers .meals .the_meal_box_1:hover h3,
-.appetizers .meals .the_meal_box_1:hover p,
-.appetizers .meals .the_meal_box_2:hover h3,
-.appetizers .meals .the_meal_box_2:hover p,
-.appetizers .meals .the_meal_box_3:hover h3,
-.appetizers .meals .the_meal_box_3:hover p,
-.dishes .meals .the_meal_box_1:hover h3,
-.dishes .meals .the_meal_box_1:hover p,
-.dishes .meals .the_meal_box_2:hover h3,
-.dishes .meals .the_meal_box_2:hover p,
-.dishes .meals .the_meal_box_3:hover h3,
-.dishes .meals .the_meal_box_3:hover p,
-.desserts .meals .the_meal_box_1:hover h3,
-.desserts .meals .the_meal_box_1:hover p,
-.desserts .meals .the_meal_box_2:hover h3,
-.desserts .meals .the_meal_box_2:hover p,
-.desserts .meals .the_meal_box_3:hover h3,
-.desserts .meals .the_meal_box_3:hover p {
+.the_food .appetizers .meals .the_meal_box_1:hover h3,
+.the_food .appetizers .meals .the_meal_box_1:hover p,
+.the_food .appetizers .meals .the_meal_box_2:hover h3,
+.the_food .appetizers .meals .the_meal_box_2:hover p,
+.the_food .appetizers .meals .the_meal_box_3:hover h3,
+.the_food .appetizers .meals .the_meal_box_3:hover p,
+.the_food .dishes .meals .the_meal_box_1:hover h3,
+.the_food .dishes .meals .the_meal_box_1:hover p,
+.the_food .dishes .meals .the_meal_box_2:hover h3,
+.the_food .dishes .meals .the_meal_box_2:hover p,
+.the_food .dishes .meals .the_meal_box_3:hover h3,
+.the_food .dishes .meals .the_meal_box_3:hover p,
+.the_food .desserts .meals .the_meal_box_1:hover h3,
+.the_food .desserts .meals .the_meal_box_1:hover p,
+.the_food .desserts .meals .the_meal_box_2:hover h3,
+.the_food .desserts .meals .the_meal_box_2:hover p,
+.the_food .desserts .meals .the_meal_box_3:hover h3,
+.the_food .desserts .meals .the_meal_box_3:hover p {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+@media all and (min-width: 992px) {
+  .the_food .appetizers .meals .the_meal_box_1:hover,
+.the_food .appetizers .meals .the_meal_box_2:hover,
+.the_food .appetizers .meals .the_meal_box_3:hover,
+.the_food .dishes .meals .the_meal_box_1:hover,
+.the_food .dishes .meals .the_meal_box_2:hover,
+.the_food .dishes .meals .the_meal_box_3:hover,
+.the_food .desserts .meals .the_meal_box_1:hover,
+.the_food .desserts .meals .the_meal_box_2:hover,
+.the_food .desserts .meals .the_meal_box_3:hover {
+    cursor: pointer;
+  }
+}
+@media all and (min-width: 992px) {
+  .the_food .appetizers h3,
+.the_food .dishes h3,
+.the_food .desserts h3 {
+    font-size: medium;
+  }
+  .the_food .appetizers p,
+.the_food .dishes p,
+.the_food .desserts p {
+    font-size: small;
+  }
+}
 
-/*ANIMATION MOVE UP MENU */
+@-webkit-keyframes rotate {
+  0% {
+    transform: rotate(360deg) scale(1);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(360deg) scale(1);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes disappear {
+  100% {
+    visibility: collapse;
+  }
+}
+@keyframes disappear {
+  100% {
+    visibility: collapse;
+  }
+}
+@-webkit-keyframes fillup {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fillup {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @-webkit-keyframes moveup {
   0% {
     margin-top: 30px;
@@ -613,7 +792,6 @@ footer img {
     margin-top: 20px;
   }
 }
-/* ANIMATION FADE MENU */
 @-webkit-keyframes fade {
   from {
     opacity: 0;
@@ -628,211 +806,5 @@ footer img {
   }
   to {
     opacity: 1;
-  }
-}
-@media all and (min-width: 768px) and (max-width: 992px) {
-  .menu_title {
-    padding-right: 10%;
-  }
-  .heart_menu .full_heart {
-    position: absolute;
-    margin-top: -20px;
-  }
-  .heart_menu .empty_heart {
-    margin-right: 100px;
-    margin-top: -20px;
-  }
-}
-@media all and (min-width: 992px) {
-  .infos h1 {
-    width: 100%;
-    font-size: 2.5em;
-  }
-  .infos p {
-    font-size: x-large;
-  }
-  .title img {
-    width: 20%;
-    padding-top: 2%;
-    padding-bottom: 2%;
-  }
-  header button,
-.menu button {
-    padding-bottom: 32px;
-    font-size: large;
-    transform: scale 1;
-    transition-property: transform;
-    transition-duration: 0.5s;
-  }
-  header button:hover,
-.menu button:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-    opacity: 0.7;
-    box-shadow: 0px 15px 20px #999;
-  }
-  .fonction h2,
-.restaurants h2 {
-    margin: 3%;
-  }
-  .steps {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 3% 5% 3%;
-  }
-  .steps .step {
-    height: 60px;
-    width: 25%;
-    padding-left: 6%;
-    margin-left: 0;
-    gap: 30px;
-    transform: scale 1;
-    transition-property: transform;
-    transition-duration: 0.5s;
-  }
-  .steps .step:hover {
-    transform: scale(1.05);
-    background-color: rgba(146, 86, 220, 0.1450980392);
-    cursor: pointer;
-  }
-  .steps .step:hover i {
-    color: #9356DC;
-  }
-  .steps i {
-    display: block;
-    color: #6E6E6E;
-  }
-  .number {
-    padding: 3% 5% 3% 5%;
-    margin-left: -80px;
-    font-weight: bold;
-  }
-  .cards {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-left: 3%;
-    margin-right: 3%;
-    padding: 0;
-  }
-  .rest_card {
-    height: 260px;
-    width: 30%;
-    transform: scale 1;
-    transition-property: transform;
-    transition-duration: 0.5s;
-  }
-  .rest_card:hover {
-    transform: scale(1.05);
-    cursor: pointer;
-  }
-  .heart {
-    display: block;
-    margin: 12% 8% 5% 5%;
-    font-size: 25px;
-    color: black;
-  }
-  .heart .empty_heart {
-    color: black;
-  }
-  .heart .full_heart {
-    background: linear-gradient(to top, #FF79DA, #9356DC);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    visibility: hidden;
-    display: block;
-    margin-top: -120%;
-  }
-  .heart:hover .empty_heart {
-    visibility: hidden;
-  }
-  .heart:hover .full_heart {
-    visibility: visible;
-    -webkit-animation: fillUp 3s liner;
-            animation: fillUp 3s liner;
-  }
-  @-webkit-keyframes fillUp {
-    0% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 0.5;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  @keyframes fillUp {
-    0% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 0.5;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  .restaurants {
-    margin-bottom: 0;
-  }
-  footer {
-    padding: 3% 0 3% 3%;
-  }
-  footer img {
-    width: 15%;
-    margin-bottom: 1%;
-  }
-  .links {
-    display: flex;
-    flex-direction: row;
-    gap: 10%;
-  }
-  .links i {
-    display: block;
-    margin: auto 16px auto 0;
-  }
-  .link_2 {
-    align-items: center;
-  }
-  /* PAGE DES MENUS */
-  .title_m i {
-    font-size: xx-large;
-    margin-top: 15%;
-  }
-  .title_m img {
-    display: block;
-    margin: auto;
-    width: 20%;
-  }
-  .pic {
-    width: 100%;
-    height: 210px;
-  }
-  .pic img {
-    width: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-  .the_food {
-    display: flex;
-    justify-content: space-between;
-  }
-  .the_food .appetizers,
-.the_food .dishes,
-.the_food .desserts {
-    width: 30%;
-  }
-  .the_food .appetizers h3,
-.the_food .dishes h3,
-.the_food .desserts h3 {
-    font-size: medium;
-  }
-  .the_food .appetizers p,
-.the_food .dishes p,
-.the_food .desserts p {
-    font-size: small;
   }
 }/*# sourceMappingURL=style.css.map */
