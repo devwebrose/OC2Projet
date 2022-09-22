@@ -213,6 +213,11 @@ button:hover {
   padding-top: 5%;
   padding-bottom: 5%;
 }
+@media all and (min-width: 768px) {
+  .restaurants {
+    margin-bottom: 0;
+  }
+}
 @media all and (min-width: 992px) {
   .restaurants {
     margin-bottom: 0;
