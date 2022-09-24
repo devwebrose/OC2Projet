@@ -100,25 +100,22 @@ button {
     padding: 13px 20px 28px 20px;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
+    transform: scaleX(1);
+    transition-property: transform;
+    transition-duration: 0.5s;
 
     @media all and (min-width: 992px) {
         padding-bottom: 32px;
         font-size: large;
-        transform: scaleX(1);
-        transition-property: transform;
-        transition-duration: 0.5s;
     }
 
     &:hover {
         opacity: 0.7;
         box-shadow: 0px 15px 20px #999;
-
-        @media all and (min-width: 992px) {
-            transform: scale(1.10);
-            opacity: 0.7;
-            box-shadow: 0px 15px 20px #999;
-            cursor: pointer;
-        }
+        transform: scale(1.10);
+        opacity: 0.7;
+        box-shadow: 0px 15px 20px #999;
+        cursor: pointer;
     }
 }
 
@@ -193,6 +190,7 @@ button {
 
         &:hover {
             background-color: #9256dc25;
+            box-shadow: rgba(0, 0, 0, 0.30) 0px 5px 15px 0px;
 
             @media all and (min-width: 992px) {
                 cursor: pointer;
